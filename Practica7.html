@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>La ciudad de los reflejos — Historia en 3 capítulos</title>
+	<style>
+		/* ...existing code... */
+		body {
+			font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+			line-height:1.6;
+			margin:0;
+			padding:0;
+			color: #333;
+			/* fondo temático */
+			background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80');
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+		}
+
+		/* capa para mejorar legibilidad sobre el fondo */
+		.page {
+			background: rgba(255,255,255,0.94);
+			padding: 1rem;
+			border-radius: 6px;
+			box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+			max-width: 900px;
+			margin: 1rem auto;
+		}
+
+		header, nav { margin-bottom:1rem; }
+		nav a { margin-right:1rem; text-decoration:none; color:#0366d6; }
+
+		/* estilos para la tabla de curiosidades */
+		table.curiosidades {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 0.75rem 0 1.5rem 0;
+			font-size: 0.95rem;
+		}
+		table.curiosidades th,
+		table.curiosidades td {
+			border: 1px solid #e5e7eb;
+			padding: 0.5rem 0.75rem;
+			text-align: left;
+			vertical-align: top;
+		}
+		table.curiosidades th {
+			background: #f6f8fa;
+			font-weight: 600;
+		}
+		.curio-links a { color: #0366d6; text-decoration: none; }
+		.curio-links a:hover { text-decoration: underline; }
+	</style>
+</head>
+<body>
+	<div class="page">
+		<!-- Inicio historia / partes generales -->
+		<header data-part="titulo">
+			<h1>La ciudad de los reflejos</h1>
+		</header>
+
+		<nav aria-label="Navegación de capítulos">
+			<!-- ...existing code... -->
+			<a href="#cap1">Capítulo 1</a>
+			<a href="#cap2">Capítulo 2</a>
+			<a href="#cap3">Capítulo 3</a>
+		</nav>
+
+		<!-- Capítulo 1 -->
+		<section id="cap1" data-part="capitulo" data-capitulo="1">
+			<!-- Inicio capítulo 1 -->
+			<h2>Capítulo 1 — El nacimiento del reflejo</h2>
+
+			<p data-part="parrafo" data-idx="1">
+				En la ciudad de los reflejos, las fachadas devolvían más que luz: devolvían memoria. Las ventanas eran espejos que, al atardecer, mostraban escenas que nadie recordaba haber vivido.
+			</p>
+
+			<p data-part="parrafo" data-idx="2">
+				Un joven llamado Mateo descubrió una noche un fragmento de su infancia en la superficie de un estanque. Lo que vio lo obligó a buscar el origen de aquellas imágenes que parecían brotar de las piedras mismas.
+			</p>
+
+			<p data-part="parrafo" data-idx="3">
+				Sus pasos lo llevaron al mercado antiguo, donde un vendedor murmullaba historias como si fueran monedas. Cada palabra parecía activar otro reflejo, otra memoria escondida en la ciudad.
+			</p>
+
+			<p data-part="parrafo" data-idx="4">
+				Al amanecer, la ciudad parecía contener la respiración. Mateo comprendió que los reflejos no solo mostraban recuerdos, sino que también los curaban si se los miraba con atención.
+			</p>
+
+			<figure data-part="imagen" aria-hidden="false">
+				<img src="https://picsum.photos/seed/reflejo1/800/400" alt="Estanque con reflejos al atardecer" width="800" height="400" />
+				<figcaption>Estanque en el que Mateo vio su pasado. (Imagen representativa)</figcaption>
+			</figure>
+			<!-- Fin capítulo 1 -->
+		</section>
+
+		<!-- Capítulo 2 -->
+		<section id="cap2" data-part="capitulo" data-capitulo="2">
+			<!-- Inicio capítulo 2 -->
+			<h2>Capítulo 2 — La búsqueda</h2>
+
+			<p data-part="parrafo" data-idx="1">
+				Convencido de que los reflejos escondían respuestas, Mateo comenzó a documentarlos. Dibujó los fragmentos, anotó fechas y preguntó a los ancianos por coincidencias entre sus memorias.
+			</p>
+
+			<p data-part="parrafo" data-idx="2">
+				En su camino se cruzó con Lía, una restauradora de vitrales que veía los reflejos como mapas. Juntos aprendieron a leer las imágenes como si fueran piezas de un rompecabezas que contaba la historia de la ciudad.
+			</p>
+
+			<p data-part="parrafo" data-idx="3">
+				Descubrieron que algunos reflejos coincidían en tiempo: la misma escena aparecía en distintas fachadas y siempre llevaba a una plaza olvidada donde crecían recuerdos comunes.
+			</p>
+
+			<p data-part="parrafo" data-idx="4">
+				La búsqueda los condujo a un viejo archivo, clausurado y cubierto de polvo. Allí, entre planos y correspondencia antigua, hallaron el origen: una leyenda sobre una fuente que devolvía aquello que había sido ocultado.
+			</p>
+
+			<figure data-part="imagen">
+				<img src="https://picsum.photos/seed/reflejo2/800/400" alt="Plaza antigua con vitrales" width="800" height="400" />
+				<figcaption>La plaza olvidada donde los reflejos coincidían. (Imagen representativa)</figcaption>
+			</figure>
+			<!-- Fin capítulo 2 -->
+		</section>
+
+		<!-- Capítulo 3 -->
+		<section id="cap3" data-part="capitulo" data-capitulo="3">
+			<!-- Inicio capítulo 3 -->
+			<h2>Capítulo 3 — La concordia</h2>
+
+			<p data-part="parrafo" data-idx="1">
+				Al frente de la fuente, Mateo y Lía vieron cómo los reflejos se entrelazaban y urdían una historia común: pérdidas, decisiones y reconciliaciones que la ciudad debía recordar para sanar.
+			</p>
+
+			<p data-part="parrafo" data-idx="2">
+				Convocaron a los vecinos y mostraron lo que los espejos contaban. Al principio hubo incredulidad; luego, uno a uno, surgieron confesiones y recuerdos que liberaron cargas antiguas.
+			</p>
+
+			<p data-part="parrafo" data-idx="3">
+				Con cada historia contada en voz alta, los reflejos dejaron de ser imágenes aisladas y comenzaron a tejer un mapa de dignidad compartida. La ciudad cambió; las fachadas brillaron con una calma nueva.
+			</p>
+
+			<p data-part="parrafo" data-idx="4">
+				Al caer la noche, Mateo comprendió que la magia no estaba solo en los reflejos sino en quienes se atrevieron a mirarlos. La ciudad de los reflejos aprendió a guardar memoria y a compartirla.
+			</p>
+
+			<figure data-part="imagen">
+				<img src="https://picsum.photos/seed/reflejo3/800/400" alt="Fuente iluminada en la noche" width="800" height="400" />
+				<figcaption>La fuente que reveló la verdad y permitió la sanación. (Imagen representativa)</figcaption>
+			</figure>
+			<!-- Fin capítulo 3 -->
+		</section>
+
+		<!-- Nueva sección: curiosidades y recursos -->
+		<section id="extras" data-part="extras">
+			<h2>Curiosidades y recursos</h2>
+
+			<table class="curiosidades" aria-describedby="curiosidades-desc">
+				<caption id="curiosidades-desc" style="caption-side:top; text-align:left; font-weight:600; margin-bottom:0.5rem;">Lista de curiosidades sobre "La ciudad de los reflejos"</caption>
+				<thead>
+					<tr>
+						<th>Curiosidad</th>
+						<th>Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Reflejos activos</td>
+						<td>Las superficies antiguas reaccionan a la memoria cuando la luz incide en determinados ángulos, como se describe en la historia.</td>
+					</tr>
+					<tr>
+						<td>La plaza olvidada</td>
+						<td>En muchas ciudades existen plazas o rincones con capas de historia que varias fachadas comparten; en la ficción, aparecen reflejos sincronizados.</td>
+					</tr>
+					<tr>
+						<td>Arte y restauración</td>
+						<td>Los vitrales y fachadas restauradas pueden revelar detalles históricos ocultos, recurso clave para los personajes Mateo y Lía.</td>
+					</tr>
+					<tr>
+						<td>Sanación colectiva</td>
+						<td>Mostrar recuerdos en comunidad puede funcionar como un ritual de reconciliación: tema central del capítulo final.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="curio-links">
+				<p>Enlaces relacionados:
+					<a href="https://unsplash.com/s/photos/old-city-reflection" target="_blank" rel="noopener">Galería de imágenes (reflejos en ciudad) - Unsplash</a>
+					·
+					<a href="https://www.youtube.com/watch?v=aqz-KE-bpKQ" target="_blank" rel="noopener">Video: documental sobre memoria urbana</a>
+				</p>
+
+				<figure aria-hidden="false">
+					<img src="https://images.unsplash.com/photo-1505765051856-8b4b6a4e7f53?auto=format&fit=crop&w=1200&q=80" alt="Fachadas reflejadas al atardecer" style="max-width:100%;height:auto;border-radius:4px;" />
+					<figcaption>Imagen representativa relacionada con la historia (clic en el enlace de arriba para más).</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<!-- Resumen de las partes -->
+		<footer>
+			<!-- ...existing code... -->
+			<h3>Marcas de la historia</h3>
+			<ul>
+				<li data-part="parte">Título: elemento header con data-part="titulo"</li>
+				<li data-part="parte">Capítulos: sections con data-part="capitulo" y data-capitulo</li>
+				<li data-part="parte">Párrafos: p con data-part="parrafo" y data-idx</li>
+				<li data-part="parte">Imágenes: figure con data-part="imagen" y figcaption</li>
+			</ul>
+		</footer>
+	</div>
+</body>
+</html>
