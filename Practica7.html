@@ -4,72 +4,186 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>La ciudad de los reflejos — Historia en 3 capítulos</title>
+	<!-- Añadido: fuente moderna y estilos renovados -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 	<style>
-		/* ...existing code... */
+		/* Reemplaza/actualiza el bloque de estilos existente para un diseño más profesional */
+		:root{
+			--bg-overlay: rgba(255,255,255,0.92);
+			--accent: #0a66ff;
+			--muted: #6b7280;
+			--card-bg: rgba(255,255,255,0.6);
+			--glass: rgba(255,255,255,0.55);
+			--radius: 12px;
+			--max-width: 1000px;
+			--shadow-1: 0 8px 30px rgba(17,24,39,0.06);
+			--focus: 3px solid rgba(10,102,255,0.14);
+		}
+
+		html,body{height:100%;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; color:#0f1724;background:#f3f4f6;}
+
 		body {
-			font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-			line-height:1.6;
-			margin:0;
-			padding:0;
-			color: #333;
-			/* fondo temático */
-			background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80');
+			/* imagen de fondo con capa oscura para contraste */
+			background-image: linear-gradient(180deg, rgba(8,10,23,0.35), rgba(8,10,23,0.35)), url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80');
 			background-size: cover;
 			background-position: center;
 			background-attachment: fixed;
+			line-height:1.6;
+			-webkit-font-smoothing:antialiased;
+			-moz-osx-font-smoothing:grayscale;
+			padding:2rem 1rem;
 		}
 
-		/* capa para mejorar legibilidad sobre el fondo */
-		.page {
-			background: rgba(255,255,255,0.94);
-			padding: 1rem;
-			border-radius: 6px;
-			box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-			max-width: 900px;
-			margin: 1rem auto;
+		.page{
+			max-width: var(--max-width);
+			margin: 0 auto;
+			background: var(--bg-overlay);
+			border-radius: 14px;
+			padding: 1.25rem;
+			box-shadow: var(--shadow-1);
+			backdrop-filter: blur(6px) saturate(120%);
+			overflow: hidden;
 		}
 
-		header, nav { margin-bottom:1rem; }
-		nav a { margin-right:1rem; text-decoration:none; color:#0366d6; }
+		/* Cabecera atractiva */
+		.site-header{
+			display:flex;
+			flex-direction:column;
+			gap:0.5rem;
+			align-items:flex-start;
+			padding:1rem 0 0.5rem 0;
+		}
+		.site-header .brand{
+			display:flex;
+			align-items:center;
+			gap:0.9rem;
+		}
+		.site-header h1{
+			font-size:1.5rem;
+			margin:0;
+			letter-spacing: -0.4px;
+			color:#071133;
+			font-weight:700;
+		}
+		.site-header p.lead{
+			margin:0;
+			color:var(--muted);
+			font-size:0.95rem;
+		}
 
-		/* estilos para la tabla de curiosidades */
-		table.curiosidades {
-			width: 100%;
-			border-collapse: collapse;
-			margin: 0.75rem 0 1.5rem 0;
-			font-size: 0.95rem;
+		/* Navegación como píldoras */
+		.chap-nav{
+			margin:0.6rem 0 1rem 0;
+			display:flex;
+			gap:0.5rem;
+			flex-wrap:wrap;
 		}
-		table.curiosidades th,
-		table.curiosidades td {
-			border: 1px solid #e5e7eb;
-			padding: 0.5rem 0.75rem;
-			text-align: left;
-			vertical-align: top;
+		.chap-nav a{
+			text-decoration:none;
+			padding:0.5rem 0.75rem;
+			background:linear-gradient(180deg,#ffffff, #f7fbff);
+			border-radius:999px;
+			border:1px solid rgba(10,102,255,0.12);
+			color:var(--accent);
+			font-weight:600;
+			box-shadow: 0 2px 8px rgba(10,102,255,0.04);
+			transition:transform .12s ease, box-shadow .12s ease;
 		}
-		table.curiosidades th {
-			background: #f6f8fa;
-			font-weight: 600;
+		.chap-nav a:hover{ transform:translateY(-3px); box-shadow: 0 6px 22px rgba(10,102,255,0.08); }
+		.chap-nav a:focus{ outline:none; box-shadow: var(--focus); border-color:var(--accent); }
+
+		/* Capítulos como tarjetas */
+		section[data-part="capitulo"]{
+			background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+			padding:1rem;
+			border-radius:10px;
+			margin-bottom:1rem;
+			box-shadow: 0 6px 22px rgba(3,7,18,0.04);
+			border: 1px solid rgba(15,23,42,0.04);
+			transition:transform .12s ease, box-shadow .12s ease;
 		}
-		.curio-links a { color: #0366d6; text-decoration: none; }
-		.curio-links a:hover { text-decoration: underline; }
+		section[data-part="capitulo"]:hover{ transform:translateY(-4px); box-shadow: 0 12px 40px rgba(3,7,18,0.06); }
+
+		section h2{ margin-top:0; color:#05204a; font-size:1.15rem; }
+
+		/* Párrafos */
+		[data-part="parrafo"]{ color:#233044; margin:0.6rem 0; }
+
+		/* Imágenes más fluidas y con borde sutil */
+		figure img{
+			width:100%;
+			height:auto;
+			border-radius:8px;
+			display:block;
+			box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+			border: 1px solid rgba(15,23,42,0.04);
+		}
+		figcaption{ font-size:0.9rem; color:var(--muted); margin-top:0.4rem; }
+
+		/* Tabla modernizada */
+		table.curiosidades{
+			width:100%;
+			border-collapse:separate;
+			border-spacing:0;
+			background:transparent;
+			font-size:0.95rem;
+		}
+		table.curiosidades thead th{
+			text-align:left;
+			font-weight:700;
+			padding:0.6rem 0.75rem;
+			color:#05204a;
+			background: linear-gradient(90deg, rgba(10,102,255,0.06), rgba(10,102,255,0.02));
+			border-bottom:1px solid rgba(15,23,42,0.04);
+		}
+		table.curiosidades tbody td{
+			padding:0.65rem 0.75rem;
+			background:transparent;
+			border-bottom:1px dashed rgba(15,23,42,0.04);
+			color:#233044;
+		}
+		.curio-links a{ color:var(--accent); text-decoration:none; font-weight:600; }
+		.curio-links a:hover{ text-decoration:underline; }
+
+		/* Footer */
+		footer{
+			margin-top:1rem;
+			padding-top:0.75rem;
+			border-top:1px solid rgba(15,23,42,0.04);
+		}
+		footer h3{ margin:0 0 0.5rem 0; font-size:1rem; color:#0b2b4a; }
+		footer ul{ margin:0.4rem 0 0 1rem; color:var(--muted); }
+
+		/* Responsive */
+		@media (min-width:880px){
+			.site-header{ flex-direction:row; align-items:center; justify-content:space-between; gap:1.2rem; }
+			.site-header .brand{ gap:1rem; }
+			.chap-nav{ order:2; }
+		}
 	</style>
 </head>
 <body>
 	<div class="page">
-		<!-- Inicio historia / partes generales -->
-		<header data-part="titulo">
-			<h1>La ciudad de los reflejos</h1>
+		<!-- Reemplaza el header original por uno con clases para el nuevo estilo -->
+		<header data-part="titulo" class="site-header">
+			<div class="brand">
+				<h1>La ciudad de los reflejos</h1>
+				<!-- pequeño subtítulo para más profesionalidad -->
+				<p class="lead">Historia en 3 capítulos — memoria, búsqueda y reconciliación</p>
+			</div>
+			<!-- navegación mejorada -->
+			<nav aria-label="Navegación de capítulos" class="chap-nav">
+				<a href="#cap1">Capítulo 1</a>
+				<a href="#cap2">Capítulo 2</a>
+				<a href="#cap3">Capítulo 3</a>
+				<a href="#extras" style="background:transparent;border:none;padding:0;color:var(--muted);font-weight:500;">Curiosidades</a>
+			</nav>
 		</header>
 
-		<nav aria-label="Navegación de capítulos">
-			<!-- ...existing code... -->
-			<a href="#cap1">Capítulo 1</a>
-			<a href="#cap2">Capítulo 2</a>
-			<a href="#cap3">Capítulo 3</a>
-		</nav>
-
 		<!-- Capítulo 1 -->
-		<section id="cap1" data-part="capitulo" data-capitulo="1">
+		<section id="cap1" data-part="capitulo" data-capitulo="1" class="capitulo-card">
 			<!-- Inicio capítulo 1 -->
 			<h2>Capítulo 1 — El nacimiento del reflejo</h2>
 
@@ -97,7 +211,7 @@
 		</section>
 
 		<!-- Capítulo 2 -->
-		<section id="cap2" data-part="capitulo" data-capitulo="2">
+		<section id="cap2" data-part="capitulo" data-capitulo="2" class="capitulo-card">
 			<!-- Inicio capítulo 2 -->
 			<h2>Capítulo 2 — La búsqueda</h2>
 
@@ -125,7 +239,7 @@
 		</section>
 
 		<!-- Capítulo 3 -->
-		<section id="cap3" data-part="capitulo" data-capitulo="3">
+		<section id="cap3" data-part="capitulo" data-capitulo="3" class="capitulo-card">
 			<!-- Inicio capítulo 3 -->
 			<h2>Capítulo 3 — La concordia</h2>
 
