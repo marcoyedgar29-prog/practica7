@@ -181,6 +181,47 @@
 		footer h3{ margin:0 0 0.5rem 0; font-size:1rem; color:#0b2b4a; }
 		footer ul{ margin:0.4rem 0 0 1rem; color:var(--muted); }
 
+		/* Ilustraciones decorativas y dibujos esquemáticos */
+		.section-wrapper{ position:relative; }
+		.chapter-illustration{
+			position:absolute;
+			top:12px;
+			right:12px;
+			width:140px;
+			opacity:0.12;
+			pointer-events:none;
+			filter:drop-shadow(0 6px 18px rgba(2,6,23,0.04));
+		}
+		.drawing{
+			display:flex;
+			gap:0.9rem;
+			align-items:flex-start;
+			margin-top:0.65rem;
+		}
+		.drawing svg{
+			flex:0 0 150px;
+			width:150px;
+			height:auto;
+			border-radius:10px;
+			background:linear-gradient(180deg, #fff, #fbfdff);
+			padding:10px;
+			box-shadow: 0 10px 26px rgba(2,6,23,0.06);
+			border:1px solid rgba(15,23,42,0.04);
+		}
+		.drawing figcaption{
+			margin:0;
+			color:var(--muted);
+			font-size:0.95rem;
+			align-self:center;
+		}
+
+		/* Pequeño ajuste para que figuras y dibujos no se superpongan en móvil */
+		@media (max-width:640px){
+			.chapter-illustration{ display:none; }
+			.drawing{ flex-direction:column; gap:0.5rem; }
+			.drawing svg{ width:100%; flex:0 0 auto; }
+		}
+
 		/* Responsive */
 		@media (min-width:880px){
 			.site-header{ flex-direction:row; align-items:center; justify-content:space-between; gap:1.2rem; }
@@ -208,8 +249,17 @@
 		</header>
 
 		<!-- Capítulo 1 -->
-		<section id="cap1" data-part="capitulo" data-capitulo="1" class="capitulo-card">
+		<section id="cap1" data-part="capitulo" data-capitulo="1" class="capitulo-card section-wrapper">
 			<!-- Inicio capítulo 1 -->
+			<!-- ilustración decorativa tenue (estanque / ondas) -->
+			<svg class="chapter-illustration" aria-hidden="true" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="#0a66ff" stroke-width="2">
+					<ellipse cx="60" cy="70" rx="46" ry="18" />
+					<path d="M18 70c18-8 38-10 62-6" />
+					<path d="M30 78c18-6 40-6 60-2" />
+				</g>
+			</svg>
+
 			<h2>Capítulo 1 — El nacimiento del reflejo</h2>
 
 			<p data-part="parrafo" data-idx="1">
@@ -232,12 +282,35 @@
 				<img src="https://images.unsplash.com/photo-1505765051856-8b4b6a4e7f53?auto=format&fit=crop&w=1200&q=80" alt="Estanque con reflejos al atardecer" width="1200" height="600" />
 				<figcaption>Estanque en el que Mateo vio su pasado. (Imagen representativa)</figcaption>
 			</figure>
+
+			<!-- Dibujo esquemático que ayuda a entender la escena -->
+			<figure class="drawing" aria-hidden="false">
+				<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d1">
+					<title id="d1">Esquema del estanque y reflejos</title>
+					<rect x="4" y="4" width="192" height="132" rx="8" fill="white" stroke="#e6eefc"/>
+					<g transform="translate(8,16)" stroke="#0b3fa8" fill="none" stroke-width="2">
+						<ellipse cx="70" cy="74" rx="56" ry="20" />
+						<path d="M18 72c20-10 40-12 64-8" />
+						<circle cx="42" cy="50" r="6" fill="#0b3fa8" opacity="0.18"/>
+					</g>
+				</svg>
+				<figcaption>Esquema: estanque con ondas y fragmentos reflejados.</figcaption>
+			</figure>
+
 			<!-- Fin capítulo 1 -->
 		</section>
 
 		<!-- Capítulo 2 -->
-		<section id="cap2" data-part="capitulo" data-capitulo="2" class="capitulo-card">
-			<!-- Inicio capítulo 2 -->
+		<section id="cap2" data-part="capitulo" data-capitulo="2" class="capitulo-card section-wrapper">
+			<!-- ilustración decorativa tenue (mapa / vitrales) -->
+			<svg class="chapter-illustration" aria-hidden="true" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="#0a66ff" stroke-width="2">
+					<rect x="10" y="18" width="80" height="64" rx="6"/>
+					<path d="M95 22 L150 22 L150 82 L95 82 Z" />
+					<path d="M20 52 L150 52" stroke-dasharray="6 4" />
+				</g>
+			</svg>
+
 			<h2>Capítulo 2 — La búsqueda</h2>
 
 			<p data-part="parrafo" data-idx="1">
@@ -260,12 +333,35 @@
 				<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80" alt="Plaza antigua con vitrales" width="1200" height="600" />
 				<figcaption>La plaza olvidada donde los reflejos coincidían. (Imagen representativa)</figcaption>
 			</figure>
+
+			<!-- Dibujo esquemático: mapa y punto de encuentro -->
+			<figure class="drawing" aria-hidden="false">
+				<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d2">
+					<title id="d2">Mapa esquemático de la búsqueda</title>
+					<rect x="4" y="4" width="192" height="132" rx="8" fill="white" stroke="#f0f6ff"/>
+					<g transform="translate(16,18)" stroke="#0b3fa8" fill="none" stroke-width="2">
+						<path d="M0 10 L40 0 L80 12 L120 6 L160 16" />
+						<circle cx="120" cy="10" r="6" fill="#0a66ff" opacity="0.18"/>
+						<path d="M10 40 L60 34 L110 44" stroke-dasharray="5 4"/>
+					</g>
+				</svg>
+				<figcaption>Esquema: rutas y plaza olvidada donde confluyen reflejos.</figcaption>
+			</figure>
+
 			<!-- Fin capítulo 2 -->
 		</section>
 
 		<!-- Capítulo 3 -->
-		<section id="cap3" data-part="capitulo" data-capitulo="3" class="capitulo-card">
-			<!-- Inicio capítulo 3 -->
+		<section id="cap3" data-part="capitulo" data-capitulo="3" class="capitulo-card section-wrapper">
+			<!-- ilustración decorativa tenue (fuente) -->
+			<svg class="chapter-illustration" aria-hidden="true" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+				<g fill="none" stroke="#0a66ff" stroke-width="2">
+					<path d="M40 70 C60 50, 100 50, 120 70" />
+					<path d="M70 60 L90 40 L110 60" />
+					<circle cx="80" cy="74" r="12" />
+				</g>
+			</svg>
+
 			<h2>Capítulo 3 — La concordia</h2>
 
 			<p data-part="parrafo" data-idx="1">
@@ -288,6 +384,21 @@
 				<img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Fuente iluminada en la noche" width="1200" height="600" />
 				<figcaption>La fuente que reveló la verdad y permitió la sanación. (Imagen representativa)</figcaption>
 			</figure>
+
+			<!-- Dibujo esquemático: fuente y reunión -->
+			<figure class="drawing" aria-hidden="false">
+				<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d3">
+					<title id="d3">Esquema de la fuente y reuniones</title>
+					<rect x="4" y="4" width="192" height="132" rx="8" fill="white" stroke="#eef6ff"/>
+					<g transform="translate(24,18)" stroke="#0b3fa8" fill="none" stroke-width="2">
+						<circle cx="54" cy="60" r="26"/>
+						<path d="M34 40 C54 20, 74 20, 94 40" />
+						<path d="M14 74 L94 74" stroke-dasharray="6 3" />
+					</g>
+				</svg>
+				<figcaption>Esquema: la fuente como núcleo y los relatos compartidos.</figcaption>
+			</figure>
+
 			<!-- Fin capítulo 3 -->
 		</section>
 
